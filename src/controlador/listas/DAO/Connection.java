@@ -16,7 +16,7 @@ import java.security.Permission;
  */
 public class Connection {
     //Data es la ruta de la carpeta dentro del proyecto; prohibido pegar la ruta en sí.
-    private static String URL = "data/"+File.separatorChar;
+    private static String URL = "data"+File.separatorChar;
     private static XStream xstream;
     private Connection(){
         

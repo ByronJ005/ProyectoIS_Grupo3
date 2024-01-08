@@ -5,7 +5,6 @@
 package controlador;
 
 
-import Controlador.Utilidades.Utilidades;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import controlador.listas.DAO.DataAccesObject;
@@ -96,8 +95,7 @@ public class EstudianteControlador extends DataAccesObject <Estudiante>{
             if (i < ultimo) {
                 ordenarQuickSort(estudiante, type, atribute, i, ultimo);
             }
-        es = es.toList(estudiante); 
-        System.out.println("resultado correcto");
+        es = es.toList(estudiante);        
         return es;
     }
     
@@ -190,4 +188,16 @@ public class EstudianteControlador extends DataAccesObject <Estudiante>{
         }
         return estudianteHallado;
     }
+
+    public static void main(String[] args) {
+        EstudianteControlador ec = new EstudianteControlador();
+        ec.getEstudiante().setId(1);
+        ec.getEstudiante().setNombres("Luis Chamba");
+        ec.guardar();
+        
+        ec.getEstudiante().setId(2);
+        ec.getEstudiante().setNombres("Alexis Ludeña");
+        ec.guardar();
+    }    
+    
 }
