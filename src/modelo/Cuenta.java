@@ -18,10 +18,8 @@ public class Cuenta {
         this.correo = correo;
         this.clave = clave;
         this.estado = estado;
-        //Comentario en rama Bayron
-        System.out.println("Cosas por borrar");
     }
-
+    
     public Integer getId() {
         return id;
     }
@@ -53,7 +51,6 @@ public class Cuenta {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
-        System.out.println("Comentario a borrar");
     }
     
      

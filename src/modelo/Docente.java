@@ -75,7 +75,7 @@ public class Docente extends Persona{
             case 0:
                 if (field.equalsIgnoreCase("id"))
                     return getId().intValue() < e.getId().intValue();
-                else if (field.equalsIgnoreCase("nombre"))
+                else if (field.equalsIgnoreCase("nombres"))
                     return getNombres().compareToIgnoreCase(e.getNombres()) < 0;
                 else if (field.equalsIgnoreCase("apellidos"))
                     return getApellidos().compareToIgnoreCase(e.getApellidos()) < 0;
