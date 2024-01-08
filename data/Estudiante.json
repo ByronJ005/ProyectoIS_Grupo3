@@ -24,40 +24,12 @@
                     "telefono": "098821232321",
                     "titulo_bachiller": "Bachillerato G.Unificado",
                     "ciudad_Procedencia": "loja"
-                },
-                "next": {
-                    "data": {
-                        "@class": "modelo.Estudiante",
-                        "id": 3,
-                        "nombres": "Bayron Alejandro",
-                        "apellidos": "Jimenez Cango",
-                        "nacionalidad": "Ecuatoriana",
-                        "fecha_nac": "2005-01-02 23:05:32.225 UTC",
-                        "cedula": 1150725750,
-                        "telefono": "0939309463",
-                        "titulo_bachiller": "Bachillerato Tecnico",
-                        "ciudad_Procedencia": "Loja"
-                    },
-                    "next": {
-                        "data": {
-                            "@class": "modelo.Estudiante",
-                            "id": 4,
-                            "nombres": "Rosa Graciela",
-                            "apellidos": "Jimenez Cango",
-                            "nacionalidad": "Ecuatoriana",
-                            "fecha_nac": "2005-01-02 23:05:32.225 UTC",
-                            "cedula": 1150725768,
-                            "telefono": "09923892139",
-                            "titulo_bachiller": "Bachillerato G.Unificado",
-                            "ciudad_Procedencia": "Catamayo"
-                        }
-                    }
                 }
             }
         },
         "last": {
-            "@reference": "..\/head\/next\/next\/next"
+            "@reference": "..\/head\/next"
         },
-        "size": 4
+        "size": 2
     }
 }

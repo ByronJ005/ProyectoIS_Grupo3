@@ -1,7 +1,11 @@
 package vista;
+
+import Controlador.Utilidades.Utilidades;
 import controlador.EstudianteControlador;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Estudiante;
 import vista.Util.Util;
