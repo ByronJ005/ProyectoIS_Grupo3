@@ -1,5 +1,7 @@
 package modelo;
-
+import com.sun.source.tree.BreakTree;
+import controlador.TDALista.exceptions.VacioException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -24,6 +26,46 @@ public class PeriodoAcademico {
         this.estado = estado;
     }
 
+    public Boolean comparar(PeriodoAcademico pa, String field, Integer type) throws VacioException{
+        switch (type) {
+            case 0:
+                if(field.equalsIgnoreCase("nombre"))
+                    return getNombre().compareToIgnoreCase(pa.getNombre()) < 0;
+                else if(field.equalsIgnoreCase("fechaDesde"))
+                    return getFechaDesde().before(pa.getFechaDesde());
+                else if(field.equalsIgnoreCase("fechaHasta"))
+                    return getFechaHasta().before(pa.getFechaHasta());
+            case 1:
+                if(field.equalsIgnoreCase("nombre"))
+                    return getNombre().compareToIgnoreCase(pa.getNombre()) > 0;
+                else if(field.equalsIgnoreCase("fechaDesde"))
+                    return getFechaDesde().after(pa.getFechaDesde());
+                else if(field.equalsIgnoreCase("fechaHasta"))
+                    return getFechaHasta().after(pa.getFechaHasta());
+            default:
+                throw new AssertionError();
+        }
+    }
+    
+    public Integer esSimilar(String field, Object valor){
+        if(field.equalsIgnoreCase("nombre")){
+            String nomActual = getNombre().toLowerCase();
+            if(nomActual.contains(valor.toString().toLowerCase()))
+                return 0;
+            else
+                return 1;
+        }else if(field.equalsIgnoreCase("fechaDesde")){
+            SimpleDateFormat formatofe = new SimpleDateFormat("yy-MM-dd");
+            String fecha = formatofe.format(getFechaDesde());
+            return fecha.compareTo(valor.toString());
+        }else if(field.equalsIgnoreCase("fechaHasta")){
+            SimpleDateFormat formatofe = new SimpleDateFormat("yy-MM-dd");
+            String fecha = formatofe.format(getFechaHasta());
+            return fecha.compareTo(valor.toString());
+        }
+        return null;
+    }
+    
     public Integer getId() {
         return id;
     }

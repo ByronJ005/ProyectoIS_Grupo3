@@ -7,8 +7,8 @@ import java.util.Date;
  */
 public class Persona {
     private Integer id;
-    String nombres;
-    String apellidos;
+    private String nombres;
+    private String apellidos;
     private String nacionalidad;
     private Date fecha_nac;
     private String cedula;
@@ -84,6 +84,11 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return apellidos + " "+nombres;
     }
     
     
