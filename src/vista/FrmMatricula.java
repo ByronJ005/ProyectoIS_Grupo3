@@ -101,7 +101,7 @@ public class FrmMatricula extends javax.swing.JFrame {
                     if (matriC.save()) {
                         limpiar();
                         JOptionPane.showMessageDialog(null, 
-                                "Se ha guardado correctamente", "Operación exitosa", 
+                                "Se ha registrado correctamente la matrícula", "Operación exitosa", 
                                 JOptionPane.INFORMATION_MESSAGE);   
                         matriC.setMatricula(null); 
                     } else {
