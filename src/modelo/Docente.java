@@ -21,37 +21,18 @@ public class Docente extends Persona{
         this.titulo_cuartoNivel = titulo_cuartoNivel;
     }
 
-    public Integer getAnios_exp_docente() {
-        return anios_exp_docente;
+    @Override
+    public String toString() {
+        return super.getNombres();
     }
-
-    public void setAnios_exp_docente(Integer anios_exp_docente) {
-        this.anios_exp_docente = anios_exp_docente;
-    }
-
-    public String getTitulo_tercerNivel() {
-        return titulo_tercerNivel;
-    }
-
-    public void setTitulo_tercerNivel(String titulo_tercerNivel) {
-        this.titulo_tercerNivel = titulo_tercerNivel;
-    }
-
-    public String getTitulo_cuartoNivel() {
-        return titulo_cuartoNivel;
-    }
-
-    public void setTitulo_cuartoNivel(String titulo_cuartoNivel) {
-        this.titulo_cuartoNivel = titulo_cuartoNivel;
-    }
-
+    
     public Boolean comparar(Docente e, Integer type, String field, Integer aux){
         if (type == 0)
             type = 1;
         else 
             type = 0;
         return comparar(e, type, field);
-    }
+    }    
     
     public Boolean comparar(Docente e, Integer type, String field){
         switch (type) {
@@ -92,8 +73,30 @@ public class Docente extends Persona{
             default:
                 return false;
         }
+    }    
+
+    public Integer getAnios_exp_docente() {
+        return anios_exp_docente;
     }
 
-    
+    public void setAnios_exp_docente(Integer anios_exp_docente) {
+        this.anios_exp_docente = anios_exp_docente;
+    }
+
+    public String getTitulo_tercerNivel() {
+        return titulo_tercerNivel;
+    }
+
+    public void setTitulo_tercerNivel(String titulo_tercerNivel) {
+        this.titulo_tercerNivel = titulo_tercerNivel;
+    }
+
+    public String getTitulo_cuartoNivel() {
+        return titulo_cuartoNivel;
+    }
+
+    public void setTitulo_cuartoNivel(String titulo_cuartoNivel) {
+        this.titulo_cuartoNivel = titulo_cuartoNivel;
+    }
 
 }

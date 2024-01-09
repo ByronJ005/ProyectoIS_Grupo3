@@ -85,10 +85,11 @@ public class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
     @Override
     public String toString() {
-        return apellidos +" " +nombres;
+        return apellidos + " "+nombres;
     }
+    
     
 }
