@@ -183,15 +183,5 @@ public class DocenteControlador extends DataAccesObject<Docente>{
         }
         return docenteHallado;
     }
-    
-    public static void main(String[] args) {
-        DocenteControlador dc = new DocenteControlador();
-        dc.getDocente().setId(1);
-        dc.getDocente().setNombres("Mario Alexander");
-        dc.guardar();
-        
-        dc.getDocente().setId(2);
-        dc.getDocente().setNombres("Franco Escamilla");
-        dc.guardar();
-    }
+
 }

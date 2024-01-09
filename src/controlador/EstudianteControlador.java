@@ -5,6 +5,7 @@
 package controlador;
 
 
+import controlador.Utilidades.Utilidades;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import controlador.listas.DAO.DataAccesObject;
@@ -188,16 +189,4 @@ public class EstudianteControlador extends DataAccesObject <Estudiante>{
         }
         return estudianteHallado;
     }
-
-    public static void main(String[] args) {
-        EstudianteControlador ec = new EstudianteControlador();
-        ec.getEstudiante().setId(1);
-        ec.getEstudiante().setNombres("Luis Chamba");
-        ec.guardar();
-        
-        ec.getEstudiante().setId(2);
-        ec.getEstudiante().setNombres("Alexis Ludeña");
-        ec.guardar();
-    }    
-    
 }
