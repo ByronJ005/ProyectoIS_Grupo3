@@ -14,8 +14,12 @@ public class Revision {
     private String descripcion;
     private Byte archivo;
     private Date fechaAsignacion;
-    private Date fechaDate;
+    private Date fechaEntrega;
     private Double calificacion;
+
+    public Revision() {
+    }
+    
 
     public Revision(Integer id, Integer id_materia, Integer id_tarea, String titulo, String descripcion, Byte archivo, Date fechaAsignacion, Date fechaDate, Double calificacion) {
         this.id = id;
@@ -25,7 +29,7 @@ public class Revision {
         this.descripcion = descripcion;
         this.archivo = archivo;
         this.fechaAsignacion = fechaAsignacion;
-        this.fechaDate = fechaDate;
+        this.fechaEntrega = fechaDate;
         this.calificacion = calificacion;
     }
 
@@ -85,12 +89,12 @@ public class Revision {
         this.fechaAsignacion = fechaAsignacion;
     }
 
-    public Date getFechaDate() {
-        return fechaDate;
+    public Date getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public void setFechaDate(Date fechaDate) {
-        this.fechaDate = fechaDate;
+    public void setFechaEntrega(Date fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
     }
 
     public Double getCalificacion() {
@@ -99,6 +103,69 @@ public class Revision {
 
     public void setCalificacion(Double calificacion) {
         this.calificacion = calificacion;
+    }
+    
+    public Boolean comparar(Revision r, String field, Integer type) {
+        switch (type) {
+            case 1:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() > r.getId().intValue();
+                    
+                } else if (field.equalsIgnoreCase("id_materia")) {
+                    return getId_materia() > r.getId_materia();
+                    
+                } else if (field.equalsIgnoreCase("id_tarea")) {
+                    return getId_tarea() > r.getId_tarea();
+                    
+                } else if (field.equalsIgnoreCase("titulo")) {
+                    return getTitulo().compareTo(r.getTitulo()) > 0;
+                    
+                } else if (field.equalsIgnoreCase("descripcion")) {
+                    return getDescripcion().compareTo(r.getDescripcion()) > 0;
+                    
+                } else if (field.equalsIgnoreCase("archivo")) {
+                    return getArchivo() > r.getArchivo();
+                    
+                } else if (field.equalsIgnoreCase("fechaasignacion")) {
+                    return getFechaAsignacion().after(r.getFechaAsignacion());
+                    
+                } else if (field.equalsIgnoreCase("fechanntrega")) {
+                    return getFechaEntrega().after(r.getFechaEntrega());
+                    
+                } else if (field.equalsIgnoreCase("calificacion")) {
+                    return getCalificacion() > r.getCalificacion();
+                }
+            case 0:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() < r.getId().intValue();
+                    
+                } else if (field.equalsIgnoreCase("id_materia")) {
+                    return getId_materia() < r.getId_materia();
+                    
+                } else if (field.equalsIgnoreCase("id_tarea")) {
+                    return getId_tarea() < r.getId_tarea();
+                    
+                } else if (field.equalsIgnoreCase("titulo")) {
+                    return getTitulo().compareTo(r.getTitulo()) < 0;
+                    
+                } else if (field.equalsIgnoreCase("descripcion")) {
+                    return getDescripcion().compareTo(r.getDescripcion()) < 0;
+                    
+                } else if (field.equalsIgnoreCase("archivo")) {
+                    return getArchivo() < r.getArchivo();
+                    
+                } else if (field.equalsIgnoreCase("fechaasignacion")) {
+                    return getFechaAsignacion().before(r.getFechaAsignacion());
+                    
+                } else if (field.equalsIgnoreCase("fechanntrega")) {
+                    return getFechaEntrega().before(r.getFechaEntrega());
+                    
+                } else if (field.equalsIgnoreCase("calificacion")) {
+                    return getCalificacion() < r.getCalificacion();
+                }
+            default:
+                return null;
+        }
     }
     
     

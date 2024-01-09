@@ -19,9 +19,20 @@ public class Estudiante extends Persona{
         this.ciudad_Procedencia = ciudad_Procedencia;
     }
 
-    @Override
-    public String toString() {
-        return super.getNombres();
+    public String getTitulo_bachiller() {
+        return titulo_bachiller;
+    }
+
+    public void setTitulo_bachiller(String titulo_bachiller) {
+        this.titulo_bachiller = titulo_bachiller;
+    }
+
+    public String getCiudad_Procedencia() {
+        return ciudad_Procedencia;
+    }
+
+    public void setCiudad_Procedencia(String ciudad_Procedencia) {
+        this.ciudad_Procedencia = ciudad_Procedencia;
     }
     
     public Boolean comparar(Estudiante e, Integer type, String field, Integer aux){
@@ -30,7 +41,7 @@ public class Estudiante extends Persona{
         else 
             type = 0;
         return comparar(e, type, field);
-    }    
+    }
     
     public Boolean comparar(Estudiante e, Integer type, String field){
         switch (type) {
@@ -71,23 +82,6 @@ public class Estudiante extends Persona{
             default:
                 return false;
         }
-    }    
-
-    public String getTitulo_bachiller() {
-        return titulo_bachiller;
     }
-
-    public void setTitulo_bachiller(String titulo_bachiller) {
-        this.titulo_bachiller = titulo_bachiller;
-    }
-
-    public String getCiudad_Procedencia() {
-        return ciudad_Procedencia;
-    }
-
-    public void setCiudad_Procedencia(String ciudad_Procedencia) {
-        this.ciudad_Procedencia = ciudad_Procedencia;
-    }
-
     
 }
