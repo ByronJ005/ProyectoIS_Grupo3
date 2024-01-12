@@ -21,6 +21,7 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jblNombre.setText(nombre + " " + apellidos);
         cargarIconos();
+        //System.out.println("Comentario prueba");
     }
     
     private void cargarIconos(){
