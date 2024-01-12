@@ -1,5 +1,5 @@
 package modelo;
-
+import controladores.AdministradorControlador;
 import java.util.Date;
 
 
@@ -35,6 +35,12 @@ public class Administrador extends Persona{
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+    
+    public static void main(String[] args) {
+        Administrador administrador = new Administrador(1, "Bayron A", "Jimenez C", "Ecuatoriana", new Date(), "1150", "099");
+        AdministradorControlador ac = new AdministradorControlador();
+        ac.save(administrador);
     }
     
 }

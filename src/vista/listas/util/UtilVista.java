@@ -1,12 +1,10 @@
-
 package vista.listas.util;
-
-import controlador.AdministradorControlador;
-import controlador.CursoControllerListas;
-import controlador.DocenteControlador;
-import controlador.EstudianteControlador;
-import controlador.MallaControllerListas;
-import controlador.RolControllerListas;
+import controladores.AdministradorControlador;
+import controladores.CursoControllerListas;
+import controladores.DocenteControlador;
+import controladores.EstudianteControlador;
+import controladores.MallaControllerListas;
+import controladores.RolControllerListas;
 import controlador.TDALista.exceptions.VacioException;
 import javax.swing.JComboBox;
 import modelo.Administrador;

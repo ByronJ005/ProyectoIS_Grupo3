@@ -1,8 +1,6 @@
-
 package vista;
-
-import controlador.CursoControllerListas;
-import controlador.MallaControllerListas;
+import controladores.CursoControllerListas;
+import controladores.MallaControllerListas;
 import controlador.TDALista.LinkedList;
 import javax.swing.JOptionPane;
 import modelo.Malla;

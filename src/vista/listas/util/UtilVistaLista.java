@@ -1,5 +1,5 @@
 package vista.listas.util;
-import controlador.EstudianteControlador;
+import controladores.EstudianteControlador;
 import controlador.TDALista.exceptions.VacioException;
 import javax.swing.JComboBox;
 import modelo.Estudiante;

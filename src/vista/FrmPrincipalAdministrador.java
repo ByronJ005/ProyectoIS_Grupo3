@@ -1,7 +1,9 @@
-
 package vista;
-
-import controlador.CuentaControllerListas;
+import controladores.CuentaControllerListas;
+import javax.swing.*;
+/*import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;*/
 
 /**
  *
@@ -18,6 +20,18 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         jblNombre.setText(nombre + " " + apellidos);
+        cargarIconos();
+    }
+    
+    private void cargarIconos(){
+        btncursa.setIcon(new ImageIcon("src\\icono\\cursa.png"));
+        btncurso.setIcon(new ImageIcon("src\\icono\\curso.png"));
+        btndocentes.setIcon(new ImageIcon("src\\icono\\docentes.png"));
+        btnestudiantes.setIcon(new ImageIcon("src\\icono\\estudiantes.png"));
+        btnmalla.setIcon(new ImageIcon("src\\icono\\malla.png"));
+        btnmaterias.setIcon(new ImageIcon("src\\icono\\materias.png"));
+        btnmatricula.setIcon(new ImageIcon("src\\icono\\matricula.png"));
+        btnperiodo.setIcon(new ImageIcon("src\\icono\\periodoAcademico.png"));
     }
 
     /**
@@ -35,13 +49,14 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jblNombre = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnmaterias = new javax.swing.JButton();
+        btnestudiantes = new javax.swing.JButton();
+        btndocentes = new javax.swing.JButton();
+        btnmatricula = new javax.swing.JButton();
+        btnmalla = new javax.swing.JButton();
+        btncurso = new javax.swing.JButton();
+        btnperiodo = new javax.swing.JButton();
+        btncursa = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -53,8 +68,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5), "[Administrador]", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\usuario_sesion.png")); // NOI18N
         jPanel3.add(jLabel1);
 
         jblNombre.setFont(new java.awt.Font("Harlow Solid Italic", 1, 18)); // NOI18N
@@ -69,89 +82,84 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 204), 5), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\materias.png")); // NOI18N
-        jButton1.setText(" Administar Materias");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnmaterias.setBackground(new java.awt.Color(0, 153, 153));
+        btnmaterias.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnmaterias.setForeground(new java.awt.Color(255, 255, 255));
+        btnmaterias.setText(" Administar Materias");
+        btnmaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnmaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnmateriasActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton1, gridBagConstraints);
+        jPanel5.add(btnmaterias, gridBagConstraints);
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\estudiantes.png")); // NOI18N
-        jButton2.setText("Administrar Estudiantes\n\n");
-        jButton2.setActionCommand(" Administrar Estudiantes  ");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnestudiantes.setBackground(new java.awt.Color(0, 153, 153));
+        btnestudiantes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnestudiantes.setForeground(new java.awt.Color(255, 255, 255));
+        btnestudiantes.setText("Administrar Estudiantes\n\n");
+        btnestudiantes.setActionCommand(" Administrar Estudiantes  ");
+        btnestudiantes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnestudiantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnestudiantesActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 80;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton2, gridBagConstraints);
+        jPanel5.add(btnestudiantes, gridBagConstraints);
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 153));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\docentes.png")); // NOI18N
-        jButton3.setText(" Administar Docentes");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btndocentes.setBackground(new java.awt.Color(0, 153, 153));
+        btndocentes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btndocentes.setForeground(new java.awt.Color(255, 255, 255));
+        btndocentes.setText(" Administar Docentes");
+        btndocentes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btndocentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndocentesActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton3, gridBagConstraints);
+        jPanel5.add(btndocentes, gridBagConstraints);
 
-        jButton4.setBackground(new java.awt.Color(0, 153, 153));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\periodoAcademico.png")); // NOI18N
-        jButton4.setText(" Periodo Academico");
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 110;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton4, gridBagConstraints);
-
-        jButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\matricula.png")); // NOI18N
-        jButton5.setText(" Matricula");
-        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnmatricula.setBackground(new java.awt.Color(0, 153, 153));
+        btnmatricula.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnmatricula.setForeground(new java.awt.Color(255, 255, 255));
+        btnmatricula.setText("Matriculas");
+        btnmatricula.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnmatricula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmatriculaActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 170;
+        gridBagConstraints.ipadx = 190;
         gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton5, gridBagConstraints);
+        jPanel5.add(btnmatricula, gridBagConstraints);
 
-        jButton6.setBackground(new java.awt.Color(0, 153, 153));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\malla.png")); // NOI18N
-        jButton6.setText(" Malla");
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnmalla.setBackground(new java.awt.Color(0, 153, 153));
+        btnmalla.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnmalla.setForeground(new java.awt.Color(255, 255, 255));
+        btnmalla.setText(" Malla");
+        btnmalla.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnmalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnmallaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -160,17 +168,16 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 190;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton6, gridBagConstraints);
+        jPanel5.add(btnmalla, gridBagConstraints);
 
-        jButton7.setBackground(new java.awt.Color(0, 153, 153));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\curso.png")); // NOI18N
-        jButton7.setText(" Curso");
-        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btncurso.setBackground(new java.awt.Color(0, 153, 153));
+        btncurso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btncurso.setForeground(new java.awt.Color(255, 255, 255));
+        btncurso.setText(" Curso");
+        btncurso.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btncurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btncursoActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -180,12 +187,47 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 190;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton7, gridBagConstraints);
+        jPanel5.add(btncurso, gridBagConstraints);
+
+        btnperiodo.setBackground(new java.awt.Color(0, 153, 153));
+        btnperiodo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnperiodo.setForeground(new java.awt.Color(255, 255, 255));
+        btnperiodo.setText(" Periodo Academico");
+        btnperiodo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnperiodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnperiodoActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 110;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        jPanel5.add(btnperiodo, gridBagConstraints);
+
+        btncursa.setBackground(new java.awt.Color(0, 153, 153));
+        btncursa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btncursa.setForeground(new java.awt.Color(255, 255, 255));
+        btncursa.setText("Cursa");
+        btncursa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btncursa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncursaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 190;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        jPanel5.add(btncursa, gridBagConstraints);
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 700, 410));
 
         jButton8.setBackground(new java.awt.Color(204, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\salir.png")); // NOI18N
         jButton8.setText("Salir");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,22 +252,42 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnmateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmateriasActionPerformed
         new FrmMateria().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnmateriasActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btncursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncursoActionPerformed
         new FrmCurso().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btncursoActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnmallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmallaActionPerformed
         new FrmMalla().setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnmallaActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         new FrmIniciarSesion().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btnestudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnestudiantesActionPerformed
+        new FrmEstudiante().setVisible(true);
+    }//GEN-LAST:event_btnestudiantesActionPerformed
+
+    private void btndocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndocentesActionPerformed
+        new FrmDocente().setVisible(true);
+    }//GEN-LAST:event_btndocentesActionPerformed
+
+    private void btnmatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmatriculaActionPerformed
+        new FrmMatricula().setVisible(true);
+    }//GEN-LAST:event_btnmatriculaActionPerformed
+
+    private void btnperiodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnperiodoActionPerformed
+        new FrmPeriodoAcademico().setVisible(true);
+    }//GEN-LAST:event_btnperiodoActionPerformed
+
+    private void btncursaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncursaActionPerformed
+     new FrmCursaAdmin().setVisible(true);
+    }//GEN-LAST:event_btncursaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,34 +318,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -296,13 +330,14 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btncursa;
+    private javax.swing.JButton btncurso;
+    private javax.swing.JButton btndocentes;
+    private javax.swing.JButton btnestudiantes;
+    private javax.swing.JButton btnmalla;
+    private javax.swing.JButton btnmaterias;
+    private javax.swing.JButton btnmatricula;
+    private javax.swing.JButton btnperiodo;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

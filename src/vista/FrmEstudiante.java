@@ -1,5 +1,5 @@
 package vista;
-import controlador.EstudianteControlador;
+import controladores.EstudianteControlador;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import javax.swing.JOptionPane;
