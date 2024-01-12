@@ -83,6 +83,5 @@ public class Estudiante extends Persona{
                 return false;
         }
     }
-   
     
 }

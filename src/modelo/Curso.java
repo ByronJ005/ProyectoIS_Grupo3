@@ -2,7 +2,7 @@ package modelo;
 
 /**
  *
- * @author Asus
+ * @author alexg
  */
 public class Curso {
     private Integer id;
@@ -18,6 +18,45 @@ public class Curso {
         this.id_malla = id_malla;
         this.ciclo = ciclo;
         this.paralelo = paralelo;
+    }
+    
+    public Boolean comparar(Curso c, String field, Integer type) {
+        switch (type) {
+            case 1:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() > c.getId().intValue();
+                } 
+                else if (field.equalsIgnoreCase("id_malla")) {
+                    return  getId_malla().intValue() > c.getId_malla().intValue();
+                }
+                else if (field.equalsIgnoreCase("ciclo")) {
+                    return getCiclo().intValue() > c.getCiclo().intValue();
+                }
+                else if (field.equalsIgnoreCase("paralelo")) {
+                    return getParalelo().compareTo(c.getParalelo()) > 0;
+                }
+                
+            case 0:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() < c.getId().intValue();
+                } 
+                else if (field.equalsIgnoreCase("id_malla")) {
+                    return  getId_malla().intValue() < c.getId_malla().intValue();
+                }
+                else if (field.equalsIgnoreCase("ciclo")) {
+                    return getCiclo().intValue() < c.getCiclo().intValue();
+                }
+                else if (field.equalsIgnoreCase("paralelo")) {
+                    return getParalelo().compareTo(c.getParalelo()) < 0;
+                }            
+            default:
+                return null;
+        }
+    }        
+
+    @Override
+    public String toString() {
+        return ciclo.toString();
     }
 
     public Integer getId() {

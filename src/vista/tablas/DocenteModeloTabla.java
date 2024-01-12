@@ -5,6 +5,7 @@
 package vista.tablas;
 
 import controlador.TDALista.LinkedList;
+import java.text.SimpleDateFormat;
 import javax.swing.table.AbstractTableModel;
 import modelo.Docente;
 import modelo.Estudiante;
@@ -48,7 +49,7 @@ private LinkedList <Docente> lista = new LinkedList <Docente>();
                 case 3:
                     return (d != null) ? d.getCedula() : " ";
                 case 4: 
-                    return (d != null) ? d.getFecha_nac().toString() : " ";
+                    return (d != null) ? new SimpleDateFormat("dd-MM-yyyy").format(d.getFecha_nac()) : " ";
                 case 5:
                     return (d != null) ? d.getAnios_exp_docente() : " ";
                 case 6:

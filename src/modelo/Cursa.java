@@ -52,6 +52,31 @@ public class Cursa {
     public void setId_materia(Integer id_materia) {
         this.id_materia = id_materia;
     }
-   
+   public Boolean comparar(Cursa c, String field, Integer type) {
+        switch (type) {
+            case 1:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() > c.getId().intValue();
+                } else if (field.equalsIgnoreCase("id_docente")) {
+                    return getId_docente() > c.getId_docente();
+                } else if (field.equalsIgnoreCase("id_materia")) {
+                    return getId_materia()> c.getId_materia();
+                } else if (field.equalsIgnoreCase("id_matricula")) {
+                    return getId_matricula() > c.getId_matricula();
+                }
+            case 0:
+                if (field.equalsIgnoreCase("id")) {
+                    return getId().intValue() < c.getId().intValue();
+                } else if (field.equalsIgnoreCase("id_docente")) {
+                    return getId_docente() < c.getId_docente();
+                } else if (field.equalsIgnoreCase("id_materia")) {
+                    return getId_materia() < c.getId_materia();
+                } else if (field.equalsIgnoreCase("id_matricula")) {
+                    return getId_matricula() < c.getId_matricula();
+                }
+            default:
+                return null;
+        }
+   }
    
 }

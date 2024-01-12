@@ -8,6 +8,7 @@ import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import controlador.listas.DAO.DataAccesObject;
 import modelo.Docente;
+import modelo.Estudiante;
 
 /**
  *
