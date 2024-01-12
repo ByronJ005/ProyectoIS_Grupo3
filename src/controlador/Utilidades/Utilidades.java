@@ -6,7 +6,7 @@ package controlador.Utilidades;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.Method; 
 //cambios en Docente y Estudiante
 /**
  *
@@ -47,6 +47,7 @@ public class Utilidades {
         
             for(Method m : clazz.getDeclaredMethods()) {
                 //System.out.println(m.getName());
+                //System.out.println("Borrar 2 comentarios");
                 if (m.getName().equalsIgnoreCase(auxAttribute)){
                     method = m;
                     break;
