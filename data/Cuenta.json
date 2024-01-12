@@ -9,11 +9,33 @@
                 "estado": true,
                 "id_rol": 1,
                 "id_persona": 4
+            },
+            "next": {
+                "data": {
+                    "@class": "modelo.Cuenta",
+                    "id": 2,
+                    "correo": "bayrin@hotmail.com",
+                    "clave": 2005,
+                    "estado": true,
+                    "id_rol": 1,
+                    "id_persona": 1
+                },
+                "next": {
+                    "data": {
+                        "@class": "modelo.Cuenta",
+                        "id": 3,
+                        "correo": "allude@hotmail.com",
+                        "clave": 2006,
+                        "estado": true,
+                        "id_rol": 1,
+                        "id_persona": 1
+                    }
+                }
             }
         },
         "last": {
-            "@reference": "..\/head"
+            "@reference": "..\/head\/next\/next"
         },
-        "size": 1
+        "size": 3
     }
 }

@@ -1,5 +1,5 @@
 
-package controlador;
+package controladores;
 
 
 import controlador.TDALista.LinkedList;

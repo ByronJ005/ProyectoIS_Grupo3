@@ -1,10 +1,8 @@
-
 package vista;
-
-import controlador.AdministradorControlador;
-import controlador.CuentaControllerListas;
-import controlador.DocenteControlador;
-import controlador.EstudianteControlador;
+import controladores.AdministradorControlador;
+import controladores.CuentaControllerListas;
+import controladores.DocenteControlador;
+import controladores.EstudianteControlador;
 import controlador.TDALista.exceptions.VacioException;
 import java.awt.Color;
 import java.util.logging.Level;

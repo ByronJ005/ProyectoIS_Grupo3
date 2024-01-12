@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/black/Desktop/apolorama/ProyectoIS_Grupo3/src/Controlador/DocenteControlador.java</file>
-            <file>file:/C:/Users/black/Desktop/apolorama/ProyectoIS_Grupo3/src/modelo/Cuenta.java</file>
-            <file>file:/C:/Users/black/Desktop/apolorama/ProyectoIS_Grupo3/src/Controlador/CuentaControllerListas.java</file>
-            <file>file:/C:/Users/black/Desktop/apolorama/ProyectoIS_Grupo3/src/modelo/Materia.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/vista/FrmPrincipalDocente.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/data/Cuenta.json</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/vista/FrmPrincipalAdministrador.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/vista/listas/util/UtilVistaLista.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/controlador/Utilidades/Utilidades.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/vista/listas/tablas/ModeloTablaMatricula.java</file>
+            <file>file:/C:/Users/Asus/Downloads/ramaBayronJ/src/vista/FrmIniciarSesion.java</file>
         </group>
     </open-files>
 </project-private>

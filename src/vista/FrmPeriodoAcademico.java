@@ -1,6 +1,5 @@
 package vista;
-
-import controlador.PeriodoController;
+import controladores.PeriodoController;
 import controlador.TDALista.LinkedList;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -8,27 +7,22 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import modelo.PeriodoAcademico;
 import vista.listas.tablas.ModeloTablaPeriodo;
-
 /**
  *
- * @author alexg
+ * @author Asus
  */
-public class FrmPeriodoAcademico extends javax.swing.JDialog {
+public class FrmPeriodoAcademico extends javax.swing.JFrame {
     LinkedList<PeriodoAcademico> p = new LinkedList<>();
     private PeriodoController pcl = new PeriodoController();
     private ModeloTablaPeriodo mtp = new ModeloTablaPeriodo();
     
-    /**
-     * Creates new form FrmAutos
-     */
-    public FrmPeriodoAcademico(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public FrmPeriodoAcademico() {
         initComponents();
         setLocationRelativeTo(null);
         limpiar();
         dtcbusqueda.setVisible(false);
         cbxorden.setVisible(false);
-    }    
+    }
 
     private void buscar() {
         String criterio = cbxCriterio.getSelectedItem().toString();
@@ -56,8 +50,8 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
                     JOptionPane.ERROR_MESSAGE);*/
             System.out.println(e.getMessage());                
         }
-    }      
-    
+    }
+     
     private void limpiar() {
         txtnombre.setText("Periodo Academico ");
         txtBusqueda.setText("");
@@ -190,7 +184,7 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
         cbxorden = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gestion de Materias");
+        setPreferredSize(new java.awt.Dimension(800, 815));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -327,13 +321,13 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -346,6 +340,15 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         limpiar();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void vernombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vernombreActionPerformed
+        if(validar()){
+            verNombre();
+        }else
+        JOptionPane.showMessageDialog(null,
+            "Coloque las fechas para completar el nombre del periodo",
+            "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_vernombreActionPerformed
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
         cargarVista();
@@ -366,15 +369,6 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         buscar();
     }//GEN-LAST:event_btnBuscarActionPerformed
-
-    private void vernombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vernombreActionPerformed
-        if(validar()){
-            verNombre();
-        }else
-            JOptionPane.showMessageDialog(null, 
-                        "Coloque las fechas para completar el nombre del periodo", 
-                        "Error", JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_vernombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,32 +397,11 @@ public class FrmPeriodoAcademico extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FrmPeriodoAcademico dialog = new FrmPeriodoAcademico(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new FrmPeriodoAcademico().setVisible(true);
             }
         });
     }
