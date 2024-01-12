@@ -10,6 +10,7 @@ public class Tarea {
     private Byte archivo;
     private Date fechaEntrega;
     private String comentario;
+    private Unidad unidad;
 
     public Tarea(Integer id, Byte archivo, Date fechaEntrega, String comentario) {
         this.id = id;
@@ -48,6 +49,14 @@ public class Tarea {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Unidad getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(Unidad unidad) {
+        this.unidad = unidad;
     }
           
     

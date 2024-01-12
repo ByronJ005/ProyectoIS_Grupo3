@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 //cambios en Docente y Estudiante
 /**
  *
- * @author sakotaz
+ * @author sakotaz 
  */
 public class Utilidades {
     public static Field getField(Class clazz, String attribute){

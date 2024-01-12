@@ -2,14 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador;
-
-
-import Controlador.Utilidades.Utilidades;
+package controladores;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import controlador.listas.DAO.DataAccesObject;
-import java.lang.reflect.Field;
 import modelo.Estudiante;
 
 /**
@@ -96,8 +92,7 @@ public class EstudianteControlador extends DataAccesObject <Estudiante>{
             if (i < ultimo) {
                 ordenarQuickSort(estudiante, type, atribute, i, ultimo);
             }
-        es = es.toList(estudiante); 
-        System.out.println("resultado correcto");
+        es = es.toList(estudiante);        
         return es;
     }
     

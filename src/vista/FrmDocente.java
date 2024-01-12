@@ -1,7 +1,7 @@
 package vista;
 import com.toedter.calendar.JCalendar;
-import controlador.DocenteControlador;
-import controlador.EstudianteControlador;
+import controladores.DocenteControlador;
+import controladores.EstudianteControlador;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import java.util.logging.Level;

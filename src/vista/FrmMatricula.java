@@ -1,6 +1,6 @@
 package vista;
-import controlador.MatriculaController;
-import controlador.PeriodoController;
+import controladores.MatriculaController;
+import controladores.PeriodoController;
 import controlador.TDALista.LinkedList;
 import vista.listas.util.UtilVistaLista;
 import javax.swing.JOptionPane;
