@@ -1,6 +1,4 @@
-
 package vista;
-
 import controladores.AdministradorControlador;
 import controladores.CuentaControllerListas;
 import controladores.DocenteControlador;

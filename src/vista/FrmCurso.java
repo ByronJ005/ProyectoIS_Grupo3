@@ -1,6 +1,4 @@
-
 package vista;
-
 import controladores.CursoControllerListas;
 import controladores.MallaControllerListas;
 import controlador.TDALista.LinkedList;

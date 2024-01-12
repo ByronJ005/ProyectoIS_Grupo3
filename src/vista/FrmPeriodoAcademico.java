@@ -183,7 +183,7 @@ public class FrmPeriodoAcademico extends javax.swing.JFrame {
         dtcbusqueda = new com.toedter.calendar.JDateChooser();
         cbxorden = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 815));
 
         jPanel1.setLayout(new java.awt.BorderLayout());

@@ -1,5 +1,4 @@
 package modelo;
-
 import controladores.AdministradorControlador;
 import java.util.Date;
 

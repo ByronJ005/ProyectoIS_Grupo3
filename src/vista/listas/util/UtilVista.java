@@ -1,6 +1,4 @@
-
 package vista.listas.util;
-
 import controladores.AdministradorControlador;
 import controladores.CursoControllerListas;
 import controladores.DocenteControlador;
