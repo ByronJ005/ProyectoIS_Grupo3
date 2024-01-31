@@ -1,10 +1,10 @@
-
 package vista;
 
 import controlador.CursoControllerListas;
 import controlador.MallaControllerListas;
 import controlador.TDALista.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import modelo.Malla;
 import vista.listas.tablas.ModeloTablaCursoListas;
 import vista.listas.util.UtilVista;
@@ -17,7 +17,11 @@ public class FrmCurso extends javax.swing.JFrame {
 
     private CursoControllerListas ccl = new CursoControllerListas();
     private ModeloTablaCursoListas mtcl = new ModeloTablaCursoListas();
-        
+
+    public JPanel getJPanel1() {
+        return jPanel1;
+    }
+
     /**
      * Creates new form FrmCurso
      */
@@ -29,7 +33,7 @@ public class FrmCurso extends javax.swing.JFrame {
 
     private void ordenar() {
         String criterio = cbxCriterio.getSelectedItem().toString().toLowerCase();
-        Integer ascdesc  = cbxAscDesc.getSelectedIndex();
+        Integer ascdesc = cbxAscDesc.getSelectedIndex();
         try {
             mtcl.setCursos(ccl.quickSort(ascdesc, criterio, mtcl.getCursos()));
             tblTabla.setModel(mtcl);
@@ -40,7 +44,7 @@ public class FrmCurso extends javax.swing.JFrame {
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }      
+    }
 
     private void buscar() {
         String criterio = cbxCriterio.getSelectedItem().toString().toLowerCase();
@@ -48,15 +52,13 @@ public class FrmCurso extends javax.swing.JFrame {
             if (criterio.equalsIgnoreCase("ciclo")) {
                 Integer ciclo = Integer.parseInt(txtBusqueda.getText());
                 mtcl.setCursos(ccl.buscarCiclo(ccl.getCursos(), criterio, ciclo));
-            }
-            else if (criterio.equalsIgnoreCase("paralelo")) {
+            } else if (criterio.equalsIgnoreCase("paralelo")) {
                 String paralelo = txtBusqueda.getText().toUpperCase();
                 mtcl.setCursos(ccl.buscarParalelo(ccl.getCursos(), criterio, paralelo));
-            }
-            else if (criterio.equalsIgnoreCase("malla")) {
+            } else if (criterio.equalsIgnoreCase("malla")) {
                 mtcl.setCursos(ccl.buscarMalla(ccl.getCursos(), "id_malla", UtilVista.getComboMallas(cbxMallaB)));
             }
-            
+
             tblTabla.setModel(mtcl);
             tblTabla.updateUI();
         } catch (Exception e) {
@@ -65,8 +67,8 @@ public class FrmCurso extends javax.swing.JFrame {
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }      
-    
+    }
+
     private void limpiar() {
         txtBusqueda.setText("");
         txtModalidad.setEnabled(false);
@@ -78,19 +80,19 @@ public class FrmCurso extends javax.swing.JFrame {
         try {
             UtilVista.cargarMalla(cbxMalla);
             UtilVista.cargarMalla(cbxMallaB);
-            txtBusqueda.setVisible(true);   
+            txtBusqueda.setVisible(true);
             cbxMallaB.setVisible(false);
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
     }
-    
+
     private void cargarTabla() {
         mtcl.setCursos(ccl.getCursos());
         tblTabla.setModel(mtcl);
         tblTabla.updateUI();
     }
-    
+
     private void guardar() {
         try {
             ccl.getCurso().setId_malla(UtilVista.getComboMallas(cbxMalla).getId());
@@ -100,60 +102,60 @@ public class FrmCurso extends javax.swing.JFrame {
             if (ccl.getCurso().getId() == null) {
                 if (ccl.save()) {
                     limpiar();
-                    JOptionPane.showMessageDialog(null, 
-                            "Se ha guardado correctamente", "Ok", 
-                            JOptionPane.INFORMATION_MESSAGE);   
-                    ccl.setCurso(null); 
+                    JOptionPane.showMessageDialog(null,
+                            "Se ha guardado correctamente", "Ok",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    ccl.setCurso(null);
                 } else {
-                JOptionPane.showMessageDialog(null, 
-                        "No se ha podido guardar correctamente", 
-                        "Error", 
-                        JOptionPane.ERROR_MESSAGE);
-            } 
-        } else {
+                    JOptionPane.showMessageDialog(null,
+                            "No se ha podido guardar correctamente",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
                 if (ccl.update(ccl.getIndex())) {
                     limpiar();
-                    JOptionPane.showMessageDialog(null, 
-                            "Se ha editado correctamente", "Ok", 
-                            JOptionPane.INFORMATION_MESSAGE);   
-                    ccl.setCurso(null); 
+                    JOptionPane.showMessageDialog(null,
+                            "Se ha editado correctamente", "Ok",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    ccl.setCurso(null);
                 } else {
-                JOptionPane.showMessageDialog(null, 
-                        "No se ha podido editar correctamente", 
-                        "Error", 
-                        JOptionPane.ERROR_MESSAGE);
-            }  
-           }
+                    JOptionPane.showMessageDialog(null,
+                            "No se ha podido editar correctamente",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, 
-                    e.getMessage(), 
-                    "Error", 
-                    JOptionPane.ERROR_MESSAGE);                   
-            } 
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
-    
+
     private void cargarVista() {
         ccl.setIndex(tblTabla.getSelectedRow());
         if (ccl.getIndex() < 0) {
             JOptionPane.showMessageDialog(null,
-                    "Seleccione una fila", 
-                    "Error", 
+                    "Seleccione una fila",
+                    "Error",
                     JOptionPane.ERROR_MESSAGE);
         } else {
             try {
                 ccl.setCurso(mtcl.getCursos().get(ccl.getIndex()));
-                cbxMalla.setSelectedIndex(ccl.getCurso().getId_malla() - 1); 
+                cbxMalla.setSelectedIndex(ccl.getCurso().getId_malla() - 1);
                 cbxCiclo.setSelectedIndex(ccl.getCurso().getCiclo());
                 cbxParalelo.setSelectedItem(ccl.getCurso().getId() - 1);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, 
-                        e.getMessage(), 
-                        "Error", 
+                JOptionPane.showMessageDialog(null,
+                        e.getMessage(),
+                        "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
         }
     }
-        
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -424,11 +426,11 @@ public class FrmCurso extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
         );
 
         pack();
@@ -473,7 +475,7 @@ public class FrmCurso extends javax.swing.JFrame {
             malla = new MallaControllerListas().getMallas().get(UtilVista.getComboMallas(cbxMalla).getId() - 1);
             txtModalidad.setText(malla.getModalidad());
         } catch (Exception e) {
-            
+
         }
     }//GEN-LAST:event_cbxMallaItemStateChanged
 

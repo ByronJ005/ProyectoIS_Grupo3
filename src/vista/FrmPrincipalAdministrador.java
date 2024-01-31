@@ -1,7 +1,10 @@
-
 package vista;
 
 import controlador.CuentaControllerListas;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -10,14 +13,28 @@ import controlador.CuentaControllerListas;
 public class FrmPrincipalAdministrador extends javax.swing.JFrame {
 
     private CuentaControllerListas cc = new CuentaControllerListas();
-    
+
     /**
      * Creates new form FrmPrincipalAdministrador
      */
-    public FrmPrincipalAdministrador(String nombre, String apellidos) {
+    public FrmPrincipalAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        jblNombre.setText(nombre + " " + apellidos);
+        cargarImagenes();
+    }
+
+    private void cargarImagenes() {
+        panelImage2.setIcon(new ImageIcon("src/icono/docentes.png"));
+        panelImage4.setIcon(new ImageIcon("src/icono/estudiantes.png"));
+        panelImage5.setIcon(new ImageIcon("src/icono/materias.png"));
+        panelImage6.setIcon(new ImageIcon("src/icono/curso.png"));
+        panelImage7.setIcon(new ImageIcon("src/icono/malla.png"));
+        panelImage8.setIcon(new ImageIcon("src/icono/matricula.png"));
+        panelImage3.setIcon(new ImageIcon("src/icono/periodoAcademico.png"));
+        panelImage9.setIcon(new ImageIcon("src/icono/usuario_prin.png"));
+        panelImage11.setIcon(new ImageIcon("src/icono/cerrar-sesion.png"));
+        panelImage1.setIcon(new ImageIcon("src/icono/logoEva.png"));
+//        panelImage10.setIcon(new ImageIcon("src/icono/fondo_blue.png"));
     }
 
     /**
@@ -31,201 +48,682 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
+        jplSalir = new javax.swing.JPanel();
+        panelImage11 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel14 = new javax.swing.JLabel();
+        panelImage10 = new org.edisoncor.gui.panel.PanelImage();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jblNombre = new javax.swing.JLabel();
+        jplDocentes = new javax.swing.JPanel();
+        panelImage2 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jplEstudiantes = new javax.swing.JPanel();
+        panelImage4 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jplMaterias = new javax.swing.JPanel();
+        panelImage5 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jplCurso = new javax.swing.JPanel();
+        panelImage6 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel11 = new javax.swing.JLabel();
+        jplMalla = new javax.swing.JPanel();
+        panelImage7 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel12 = new javax.swing.JLabel();
+        jplMatricula = new javax.swing.JPanel();
+        panelImage8 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel13 = new javax.swing.JLabel();
+        jplPeriodoAcademico = new javax.swing.JPanel();
+        panelImage3 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        panelImage9 = new org.edisoncor.gui.panel.PanelImage();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        panelImage1 = new org.edisoncor.gui.panel.PanelImage();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5), "[Administrador]", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
-        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\usuario_sesion.png")); // NOI18N
-        jPanel3.add(jLabel1);
-
-        jblNombre.setFont(new java.awt.Font("Harlow Solid Italic", 1, 18)); // NOI18N
-        jblNombre.setForeground(new java.awt.Color(0, 0, 153));
-        jblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jblNombre.setText("Administrador");
-        jPanel3.add(jblNombre);
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 430));
-
-        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 204), 5), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
-        jPanel5.setLayout(new java.awt.GridBagLayout());
-
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\materias.png")); // NOI18N
-        jButton1.setText(" Administar Materias");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jplSalir.setBackground(new java.awt.Color(255, 255, 204));
+        jplSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplSalirMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton1, gridBagConstraints);
+        jplSalir.setLayout(new java.awt.GridBagLayout());
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\estudiantes.png")); // NOI18N
-        jButton2.setText("Administrar Estudiantes\n\n");
-        jButton2.setActionCommand(" Administrar Estudiantes  ");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        javax.swing.GroupLayout panelImage11Layout = new javax.swing.GroupLayout(panelImage11);
+        panelImage11.setLayout(panelImage11Layout);
+        panelImage11Layout.setHorizontalGroup(
+            panelImage11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+        panelImage11Layout.setVerticalGroup(
+            panelImage11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.ipady = 35;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jplSalir.add(panelImage11, gridBagConstraints);
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("Cerrar Sesion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 80;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton2, gridBagConstraints);
+        jplSalir.add(jLabel14, gridBagConstraints);
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 153));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\docentes.png")); // NOI18N
-        jButton3.setText(" Administar Docentes");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton3, gridBagConstraints);
+        javax.swing.GroupLayout panelImage10Layout = new javax.swing.GroupLayout(panelImage10);
+        panelImage10.setLayout(panelImage10Layout);
+        panelImage10Layout.setHorizontalGroup(
+            panelImage10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 774, Short.MAX_VALUE)
+        );
+        panelImage10Layout.setVerticalGroup(
+            panelImage10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 76, Short.MAX_VALUE)
+        );
 
-        jButton4.setBackground(new java.awt.Color(0, 153, 153));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\periodoAcademico.png")); // NOI18N
-        jButton4.setText(" Periodo Academico");
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 110;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton4, gridBagConstraints);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelImage10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jplSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jplSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(panelImage10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
-        jButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\matricula.png")); // NOI18N
-        jButton5.setText(" Matricula");
-        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 170;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton5, gridBagConstraints);
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton6.setBackground(new java.awt.Color(0, 153, 153));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\malla.png")); // NOI18N
-        jButton6.setText(" Malla");
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+        jblNombre.setFont(new java.awt.Font("Harlow Solid Italic", 1, 18)); // NOI18N
+        jblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblNombre.setText("Administrador");
+        jPanel3.add(jblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 128, -1));
+
+        jplDocentes.setBackground(new java.awt.Color(0, 153, 153));
+        jplDocentes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplDocentesMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 190;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton6, gridBagConstraints);
 
-        jButton7.setBackground(new java.awt.Color(0, 153, 153));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\Tercer Ciclo\\PIS_Grupo3-master\\src\\icono\\curso.png")); // NOI18N
-        jButton7.setText(" Curso");
-        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+        javax.swing.GroupLayout panelImage2Layout = new javax.swing.GroupLayout(panelImage2);
+        panelImage2.setLayout(panelImage2Layout);
+        panelImage2Layout.setHorizontalGroup(
+            panelImage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage2Layout.setVerticalGroup(
+            panelImage2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Administrar");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Docentes");
+
+        javax.swing.GroupLayout jplDocentesLayout = new javax.swing.GroupLayout(jplDocentes);
+        jplDocentes.setLayout(jplDocentesLayout);
+        jplDocentesLayout.setHorizontalGroup(
+            jplDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplDocentesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(panelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jplDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)))
+        );
+        jplDocentesLayout.setVerticalGroup(
+            jplDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplDocentesLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jplDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jplDocentesLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel3))
+                    .addComponent(jLabel2)))
+        );
+
+        jPanel3.add(jplDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 209, 200, 50));
+
+        jplEstudiantes.setBackground(new java.awt.Color(0, 153, 153));
+        jplEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplEstudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplEstudiantesMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 190;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel5.add(jButton7, gridBagConstraints);
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 700, 410));
+        javax.swing.GroupLayout panelImage4Layout = new javax.swing.GroupLayout(panelImage4);
+        panelImage4.setLayout(panelImage4Layout);
+        panelImage4Layout.setHorizontalGroup(
+            panelImage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage4Layout.setVerticalGroup(
+            panelImage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
 
-        jButton8.setBackground(new java.awt.Color(204, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\alexg\\OneDrive\\Desktop\\salir.png")); // NOI18N
-        jButton8.setText("Salir");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Administrar");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Estudiantes");
+
+        javax.swing.GroupLayout jplEstudiantesLayout = new javax.swing.GroupLayout(jplEstudiantes);
+        jplEstudiantes.setLayout(jplEstudiantesLayout);
+        jplEstudiantesLayout.setHorizontalGroup(
+            jplEstudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplEstudiantesLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(panelImage4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jplEstudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)))
+        );
+        jplEstudiantesLayout.setVerticalGroup(
+            jplEstudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplEstudiantesLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jplEstudiantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelImage4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jplEstudiantesLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel7))
+                    .addComponent(jLabel6)))
+        );
+
+        jPanel3.add(jplEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 200, 50));
+
+        jplMaterias.setBackground(new java.awt.Color(0, 153, 153));
+        jplMaterias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplMateriasMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, -1));
+
+        javax.swing.GroupLayout panelImage5Layout = new javax.swing.GroupLayout(panelImage5);
+        panelImage5.setLayout(panelImage5Layout);
+        panelImage5Layout.setHorizontalGroup(
+            panelImage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage5Layout.setVerticalGroup(
+            panelImage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Administrar");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Materias");
+
+        javax.swing.GroupLayout jplMateriasLayout = new javax.swing.GroupLayout(jplMaterias);
+        jplMaterias.setLayout(jplMateriasLayout);
+        jplMateriasLayout.setHorizontalGroup(
+            jplMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMateriasLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(panelImage5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jplMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)))
+        );
+        jplMateriasLayout.setVerticalGroup(
+            jplMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMateriasLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jplMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelImage5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addGroup(jplMateriasLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel9))))
+        );
+
+        jPanel3.add(jplMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 200, 50));
+
+        jplCurso.setBackground(new java.awt.Color(0, 153, 153));
+        jplCurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplCurso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplCursoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelImage6Layout = new javax.swing.GroupLayout(panelImage6);
+        panelImage6.setLayout(panelImage6Layout);
+        panelImage6Layout.setHorizontalGroup(
+            panelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage6Layout.setVerticalGroup(
+            panelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Curso");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jplCursoLayout = new javax.swing.GroupLayout(jplCurso);
+        jplCurso.setLayout(jplCursoLayout);
+        jplCursoLayout.setHorizontalGroup(
+            jplCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplCursoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(panelImage6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel11)
+                .addContainerGap())
+        );
+        jplCursoLayout.setVerticalGroup(
+            jplCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplCursoLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel11)
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jplCursoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelImage6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(jplCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 200, 50));
+
+        jplMalla.setBackground(new java.awt.Color(0, 153, 153));
+        jplMalla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplMalla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplMallaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelImage7Layout = new javax.swing.GroupLayout(panelImage7);
+        panelImage7.setLayout(panelImage7Layout);
+        panelImage7Layout.setHorizontalGroup(
+            panelImage7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage7Layout.setVerticalGroup(
+            panelImage7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Malla");
+
+        javax.swing.GroupLayout jplMallaLayout = new javax.swing.GroupLayout(jplMalla);
+        jplMalla.setLayout(jplMallaLayout);
+        jplMallaLayout.setHorizontalGroup(
+            jplMallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMallaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(panelImage7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jplMallaLayout.setVerticalGroup(
+            jplMallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMallaLayout.createSequentialGroup()
+                .addGroup(jplMallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jplMallaLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel12))
+                    .addGroup(jplMallaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelImage7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 15, 15))
+        );
+
+        jPanel3.add(jplMalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 200, 50));
+
+        jplMatricula.setBackground(new java.awt.Color(0, 153, 153));
+        jplMatricula.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplMatricula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplMatriculaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelImage8Layout = new javax.swing.GroupLayout(panelImage8);
+        panelImage8.setLayout(panelImage8Layout);
+        panelImage8Layout.setHorizontalGroup(
+            panelImage8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage8Layout.setVerticalGroup(
+            panelImage8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Matricula");
+
+        javax.swing.GroupLayout jplMatriculaLayout = new javax.swing.GroupLayout(jplMatricula);
+        jplMatricula.setLayout(jplMatriculaLayout);
+        jplMatriculaLayout.setHorizontalGroup(
+            jplMatriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMatriculaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(panelImage8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel13)
+                .addContainerGap())
+        );
+        jplMatriculaLayout.setVerticalGroup(
+            jplMatriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplMatriculaLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel13)
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jplMatriculaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelImage8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(jplMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 200, 50));
+
+        jplPeriodoAcademico.setBackground(new java.awt.Color(0, 153, 153));
+        jplPeriodoAcademico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jplPeriodoAcademico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jplPeriodoAcademicoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelImage3Layout = new javax.swing.GroupLayout(panelImage3);
+        panelImage3.setLayout(panelImage3Layout);
+        panelImage3Layout.setHorizontalGroup(
+            panelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        panelImage3Layout.setVerticalGroup(
+            panelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+        );
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Periodo");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Academico");
+
+        javax.swing.GroupLayout jplPeriodoAcademicoLayout = new javax.swing.GroupLayout(jplPeriodoAcademico);
+        jplPeriodoAcademico.setLayout(jplPeriodoAcademicoLayout);
+        jplPeriodoAcademicoLayout.setHorizontalGroup(
+            jplPeriodoAcademicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplPeriodoAcademicoLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(panelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jplPeriodoAcademicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)))
+        );
+        jplPeriodoAcademicoLayout.setVerticalGroup(
+            jplPeriodoAcademicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jplPeriodoAcademicoLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jplPeriodoAcademicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jplPeriodoAcademicoLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel5))
+                    .addComponent(jLabel4)))
+        );
+
+        jPanel3.add(jplPeriodoAcademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 200, 50));
+
+        javax.swing.GroupLayout panelImage9Layout = new javax.swing.GroupLayout(panelImage9);
+        panelImage9.setLayout(panelImage9Layout);
+        panelImage9Layout.setHorizontalGroup(
+            panelImage9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        panelImage9Layout.setVerticalGroup(
+            panelImage9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(panelImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, 70));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1000, 515));
+
+        javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
+        panelImage1.setLayout(panelImage1Layout);
+        panelImage1Layout.setHorizontalGroup(
+            panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 301, Short.MAX_VALUE)
+        );
+        panelImage1Layout.setVerticalGroup(
+            panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 315, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(panelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(369, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(panelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new FrmMateria().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jplDocentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplDocentesMouseClicked
+        JLabel[] labelsBlancos = {jLabel6, jLabel7, jLabel8, jLabel9, jLabel11, jLabel12, jLabel13, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new FrmCurso().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+        JPanel[] panelsCianOscuro = {jplEstudiantes, jplMaterias, jplMalla, jplCurso, jplMatricula, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new FrmMalla().setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+        jplDocentes.setBackground(Color.LIGHT_GRAY);
+        jLabel2.setForeground(Color.black);
+        jLabel3.setForeground(Color.black);
+    }//GEN-LAST:event_jplDocentesMouseClicked
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jplEstudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplEstudiantesMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel8, jLabel9, jLabel11, jLabel12, jLabel13, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplMaterias, jplMalla, jplCurso, jplMatricula, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplEstudiantes.setBackground(Color.LIGHT_GRAY);
+        jLabel6.setForeground(Color.black);
+        jLabel7.setForeground(Color.black);
+    }//GEN-LAST:event_jplEstudiantesMouseClicked
+
+    private void jplMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplMateriasMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel6, jLabel7, jLabel11, jLabel12, jLabel13, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplEstudiantes, jplMalla, jplCurso, jplMatricula, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplMaterias.setBackground(Color.LIGHT_GRAY);
+        jLabel8.setForeground(Color.black);
+        jLabel9.setForeground(Color.black);
+
+        FrmMateria frmMateria = new FrmMateria();
+        JPanel panelMateria = frmMateria.getJPanel1();
+        jPanel5.removeAll();
+        jPanel5.add(panelMateria);
+        jPanel5.revalidate();
+        jPanel5.repaint();
+    }//GEN-LAST:event_jplMateriasMouseClicked
+
+    private void jplCursoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplCursoMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel6, jLabel7, jLabel8, jLabel9, jLabel12, jLabel13, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplEstudiantes, jplMaterias, jplMalla, jplMatricula, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplCurso.setBackground(Color.LIGHT_GRAY);
+        jLabel11.setForeground(Color.black);
+
+        FrmCurso frmCurso = new FrmCurso();
+        JPanel panelCurso = frmCurso.getJPanel1();
+        jPanel5.removeAll();
+        jPanel5.add(panelCurso);
+        jPanel5.revalidate();
+        jPanel5.repaint();
+    }//GEN-LAST:event_jplCursoMouseClicked
+
+    private void jplMallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplMallaMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel6, jLabel7, jLabel8, jLabel9, jLabel11, jLabel13, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplEstudiantes, jplMaterias, jplCurso, jplMatricula, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplMalla.setBackground(Color.LIGHT_GRAY);
+        jLabel12.setForeground(Color.black);
+
+        FrmMalla frmMalla = new FrmMalla();
+        JPanel panelMalla = frmMalla.getJPanel1();
+        jPanel5.removeAll();
+        jPanel5.add(panelMalla);
+        jPanel5.revalidate();
+        jPanel5.repaint();
+    }//GEN-LAST:event_jplMallaMouseClicked
+
+    private void jplMatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplMatriculaMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel6, jLabel7, jLabel8, jLabel9, jLabel11, jLabel12, jLabel4, jLabel5};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplEstudiantes, jplMaterias, jplCurso, jplMalla, jplPeriodoAcademico};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplMatricula.setBackground(Color.LIGHT_GRAY);
+        jLabel13.setForeground(Color.black);
+    }//GEN-LAST:event_jplMatriculaMouseClicked
+
+    private void jplPeriodoAcademicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplPeriodoAcademicoMouseClicked
+        JLabel[] labelsBlancos = {jLabel2, jLabel3, jLabel6, jLabel7, jLabel8, jLabel9, jLabel11, jLabel12, jLabel13};
+        for (JLabel label : labelsBlancos) {
+            label.setForeground(Color.white);
+        }
+
+        JPanel[] panelsCianOscuro = {jplDocentes, jplEstudiantes, jplMaterias, jplCurso, jplMalla, jplMatricula};
+        for (JPanel panel : panelsCianOscuro) {
+            panel.setBackground(new Color(0, 153, 153));
+        }
+
+        jplPeriodoAcademico.setBackground(Color.LIGHT_GRAY);
+        jLabel4.setForeground(Color.black);
+        jLabel5.setForeground(Color.black);
+    }//GEN-LAST:event_jplPeriodoAcademicoMouseClicked
+
+    private void jplSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jplSalirMouseClicked
         new FrmIniciarSesion().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton8ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jplSalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -284,30 +782,148 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 String nombres = null;
                 String apellidos = null;
-                new FrmPrincipalAdministrador(nombres, apellidos).setVisible(true);
+                new FrmPrincipalAdministrador().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel jblNombre;
+    private javax.swing.JPanel jplCurso;
+    private javax.swing.JPanel jplDocentes;
+    private javax.swing.JPanel jplEstudiantes;
+    private javax.swing.JPanel jplMalla;
+    private javax.swing.JPanel jplMaterias;
+    private javax.swing.JPanel jplMatricula;
+    private javax.swing.JPanel jplPeriodoAcademico;
+    private javax.swing.JPanel jplSalir;
+    private org.edisoncor.gui.panel.PanelImage panelImage1;
+    private org.edisoncor.gui.panel.PanelImage panelImage10;
+    private org.edisoncor.gui.panel.PanelImage panelImage11;
+    private org.edisoncor.gui.panel.PanelImage panelImage2;
+    private org.edisoncor.gui.panel.PanelImage panelImage3;
+    private org.edisoncor.gui.panel.PanelImage panelImage4;
+    private org.edisoncor.gui.panel.PanelImage panelImage5;
+    private org.edisoncor.gui.panel.PanelImage panelImage6;
+    private org.edisoncor.gui.panel.PanelImage panelImage7;
+    private org.edisoncor.gui.panel.PanelImage panelImage8;
+    private org.edisoncor.gui.panel.PanelImage panelImage9;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,3 @@
-
 package vista;
 
 import controlador.MallaControllerListas;
@@ -7,6 +6,7 @@ import java.awt.event.ItemEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import vista.listas.tablas.ModeloTablaMallaListas;
 
 /**
@@ -17,7 +17,11 @@ public class FrmMalla extends javax.swing.JFrame {
 
     private MallaControllerListas mcl = new MallaControllerListas();
     private ModeloTablaMallaListas mtml = new ModeloTablaMallaListas();
-        
+
+    public JPanel getJPanel1() {
+        return jPanel1;
+    }
+
     /**
      * Creates new form FrmCurso
      */
@@ -25,12 +29,12 @@ public class FrmMalla extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         limpiar();
-        
+
     }
 
     private void ordenar() {
         String criterio = cbxCriterio.getSelectedItem().toString().toLowerCase();
-        Integer ascdesc  = cbxAscDesc.getSelectedIndex();
+        Integer ascdesc = cbxAscDesc.getSelectedIndex();
         try {
             mtml.setMallas(mcl.quickSort(ascdesc, criterio, mtml.getMallas()));
             tblTabla.setModel(mtml);
@@ -41,24 +45,22 @@ public class FrmMalla extends javax.swing.JFrame {
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }      
+    }
 
     private void buscar() {
         String criterio = cbxCriterio.getSelectedItem().toString().toLowerCase();
         try {
             if (criterio.equalsIgnoreCase("nombre")) {
                 mtml.setMallas(mcl.buscarNombre(mcl.getMallas(), criterio, txtBusqueda.getText()));
-            }
-            else if (criterio.equalsIgnoreCase("modalidad")) {
+            } else if (criterio.equalsIgnoreCase("modalidad")) {
                 mtml.setMallas(mcl.buscarModalidad(mcl.getMallas(), criterio, txtBusqueda.getText()));
-            }
-            else if (criterio.equalsIgnoreCase("fecha")) {
+            } else if (criterio.equalsIgnoreCase("fecha")) {
                 String strDate = txtBusquedaFecha.getText();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd / MM / yy");
                 Date fecha = formatter.parse(strDate);
                 mtml.setMallas(mcl.buscarFecha(mcl.getMallas(), "fecha_Creacion", fecha));
             }
-            
+
             tblTabla.setModel(mtml);
             tblTabla.updateUI();
         } catch (Exception e) {
@@ -67,14 +69,14 @@ public class FrmMalla extends javax.swing.JFrame {
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }      
-    
+    }
+
     private void limpiar() {
         txtNombre.setText("");
         txtBusqueda.setText("");
         txtCodResolucion.setText("COD_R_" + mcl.generatedCode());
         txtCodResolucion.setEnabled(false);
-        txtFechaCreacion.setText(new  SimpleDateFormat("dd / MM / yy").format(new Date()));
+        txtFechaCreacion.setText(new SimpleDateFormat("dd / MM / yy").format(new Date()));
         txtBusquedaFecha.setText("dd / MM / yy");
         cbxCriterio.setSelectedItem("NOMBRE");
         checkBoxVigente.setSelected(true);
@@ -85,22 +87,22 @@ public class FrmMalla extends javax.swing.JFrame {
         mcl.setMalla(null);
         mcl.setIndex(-1);
         try {
-            txtBusqueda.setVisible(true);            
+            txtBusqueda.setVisible(true);
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
     }
-    
+
     private void cargarTabla() {
         mtml.setMallas(mcl.getMallas());
         tblTabla.setModel(mtml);
         tblTabla.updateUI();
     }
-    
+
     private Boolean validar() {
         return !txtNombre.getText().trim().isEmpty();
-    }        
-    
+    }
+
     private void guardar() {
         if (validar()) {
             try {
@@ -113,51 +115,49 @@ public class FrmMalla extends javax.swing.JFrame {
                 } else {
                     mcl.getMalla().setEstado(false);
                 }
-               
-                
+
                 if (mcl.getMalla().getId() == null) {
                     if (mcl.save()) {
                         limpiar();
-                        JOptionPane.showMessageDialog(null, 
-                                "Se ha guardado correctamente", "Ok", 
-                                JOptionPane.INFORMATION_MESSAGE);   
-                        mcl.setMalla(null); 
+                        JOptionPane.showMessageDialog(null,
+                                "Se ha guardado correctamente", "Ok",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        mcl.setMalla(null);
                     } else {
-                    JOptionPane.showMessageDialog(null, 
-                            "No se ha podido guardar correctamente", 
-                            "Error", 
-                            JOptionPane.ERROR_MESSAGE);
-                } 
-            } else {
+                        JOptionPane.showMessageDialog(null,
+                                "No se ha podido guardar correctamente",
+                                "Error",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
                     if (mcl.update(mcl.getIndex())) {
                         limpiar();
-                        JOptionPane.showMessageDialog(null, 
-                                "Se ha editado correctamente", "Ok", 
-                                JOptionPane.INFORMATION_MESSAGE);   
-                        mcl.setMalla(null); 
+                        JOptionPane.showMessageDialog(null,
+                                "Se ha editado correctamente", "Ok",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        mcl.setMalla(null);
                     } else {
-                    JOptionPane.showMessageDialog(null, 
-                            "No se ha podido editar correctamente", 
-                            "Error", 
-                            JOptionPane.ERROR_MESSAGE);
-                }  
-               }
+                        JOptionPane.showMessageDialog(null,
+                                "No se ha podido editar correctamente",
+                                "Error",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, 
-                        e.getMessage(), 
-                        "Error", 
-                        JOptionPane.ERROR_MESSAGE);                   
-                } 
+                JOptionPane.showMessageDialog(null,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }    
-    
-    
+    }
+
     private void cargarVista() {
         mcl.setIndex(tblTabla.getSelectedRow());
         if (mcl.getIndex() < 0) {
             JOptionPane.showMessageDialog(null,
-                    "Seleccione una fila", 
-                    "Error", 
+                    "Seleccione una fila",
+                    "Error",
                     JOptionPane.ERROR_MESSAGE);
         } else {
             try {
@@ -165,18 +165,18 @@ public class FrmMalla extends javax.swing.JFrame {
                 txtNombre.setText(mcl.getMalla().getNombre());
                 txtCodResolucion.setText(mcl.getMalla().getCod_resolucion());
                 txtFechaCreacion.setText(new SimpleDateFormat("dd / MM / yy").format(mcl.getMalla().getFecha_Creacion()));
-                cbxModalidad.setSelectedItem(mcl.getMalla().getModalidad());   
+                cbxModalidad.setSelectedItem(mcl.getMalla().getModalidad());
                 checkBoxVigente.setSelected(mcl.getMalla().getEstado().equals(true));
                 checkBoxVigente.setEnabled(true);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, 
-                        e.getMessage(), 
-                        "Error", 
+                JOptionPane.showMessageDialog(null,
+                        e.getMessage(),
+                        "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
         }
     }
-        
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -353,8 +353,8 @@ public class FrmMalla extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 300;
-        gridBagConstraints.ipady = -200;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.ipady = -300;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel5.add(jScrollPane2, gridBagConstraints);
 
@@ -457,11 +457,11 @@ public class FrmMalla extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
         );
 
         pack();
@@ -485,10 +485,10 @@ public class FrmMalla extends javax.swing.JFrame {
             txtBusquedaFecha.setVisible(false);
         } else if (evt.getItem().toString().equalsIgnoreCase("MODALIDAD")) {
             txtBusqueda.setVisible(true);
-            txtBusquedaFecha.setVisible(false);            
+            txtBusquedaFecha.setVisible(false);
         } else if (evt.getItem().toString().equalsIgnoreCase("FECHA")) {
             txtBusqueda.setVisible(false);
-            txtBusquedaFecha.setVisible(true);            
+            txtBusquedaFecha.setVisible(true);
         }
     }//GEN-LAST:event_cbxCriterioItemStateChanged
 

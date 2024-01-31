@@ -5,6 +5,7 @@ import controlador.CursoControllerListas;
 import controlador.MateriaControllerListas;
 import controlador.TDALista.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import modelo.Curso;
 import modelo.Materia;
 import vista.listas.tablas.ModeloTablaMateriaListas;
@@ -14,18 +15,20 @@ import vista.listas.util.UtilVista;
  *
  * @author alexg
  */
-public class FrmMateria extends javax.swing.JDialog {
+public class FrmMateria extends javax.swing.JFrame {
 
     private MateriaControllerListas mcl = new MateriaControllerListas();
     private ModeloTablaMateriaListas mtml = new ModeloTablaMateriaListas();
+    
+    public JPanel getJPanel1() {
+        return jPanel1;
+    }
     
     /**
      * Creates new form FrmAutos
      */
     public FrmMateria() {
         initComponents();
-        setLocationRelativeTo(null);
-        
         limpiar();
     }
     
@@ -201,7 +204,6 @@ public class FrmMateria extends javax.swing.JDialog {
         jblCiclo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gestion de Materias");
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -438,11 +440,11 @@ public class FrmMateria extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
         );
 
         pack();

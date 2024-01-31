@@ -1,4 +1,3 @@
-
 package controlador;
 
 import controlador.TDALista.LinkedList;
@@ -7,17 +6,18 @@ import controlador.util.Utilidades;
 import java.lang.reflect.Field;
 import modelo.Cuenta;
 import modelo.Curso;
+import modelo.Rol;
 
 /**
  *
  * @author alexg
  */
-public class CuentaControllerListas extends DataAccesObject<Cuenta>{
-    
+public class CuentaControllerListas extends DataAccesObject<Cuenta> {
+
     private LinkedList<Cuenta> cuentas = new LinkedList<>();
     private Cuenta cuenta = new Cuenta();
     private Integer index = -1;
-    
+
     public CuentaControllerListas() {
         super(Cuenta.class);
     }
@@ -26,9 +26,10 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
      * @return the cuentas
      */
     public LinkedList<Cuenta> getCuentas() {
-        if (cuentas.isEmpty()) 
+        if (cuentas.isEmpty()) {
             cuentas = listall();
-            return cuentas;
+        }
+        return cuentas;
     }
 
     /**
@@ -73,11 +74,11 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
         this.cuenta.setId(generated_id());
         return save(cuenta);
     }
-    
+
     public Boolean update(Integer index) {
         return update(cuenta, index);
     }
-    
+
     public String generatedCode() {
         StringBuilder code = new StringBuilder();
         Integer lenght = listall().getSize() + 1;
@@ -88,23 +89,22 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
         code.append(lenght.toString());
         return code.toString();
     }
-    
+
     public LinkedList<Cuenta> quickSort(Integer type, String field, LinkedList<Cuenta> lista) throws Exception {
-        getCuenta();  
-        Integer n = lista.getSize();    
-        Cuenta[] c = lista.toArray();   
-        Field faux = Utilidades.getField(Cuenta.class, field);    
-        if (faux != null) {    
-            quickSort(c, 0, n - 1, type, field);    
-            lista = lista.toList(c);    
+        getCuenta();
+        Integer n = lista.getSize();
+        Cuenta[] c = lista.toArray();
+        Field faux = Utilidades.getField(Cuenta.class, field);
+        if (faux != null) {
+            quickSort(c, 0, n - 1, type, field);
+            lista = lista.toList(c);
         } else {
-            throw new Exception("No existe ese criterio de busqueda");      
+            throw new Exception("No existe ese criterio de busqueda");
         }
-        return lista;      
+        return lista;
     }
 
     //Metodo de Ordenamiento: QUICK SORT
-
     public void quickSort(Cuenta[] arreglo, int inicio, int fin, Integer type, String field) throws Exception {
         int i = inicio;
         int j = fin;
@@ -125,10 +125,12 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
             }
         } while (i <= j);
 
-        if (inicio < j)
+        if (inicio < j) {
             quickSort(arreglo, inicio, j, type, field);
-        if (i < fin)
+        }
+        if (i < fin) {
             quickSort(arreglo, i, fin, type, field);
+        }
     }
 
     public LinkedList<Cuenta> buscarCorreo(LinkedList<Cuenta> lista, String text, String correo) throws Exception {
@@ -153,9 +155,9 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
             }
         }
         return result;
-    }    
-    
-    public int obtenerIdPorCorreo(LinkedList<Cuenta> lista, String correo) throws Exception {
+    }
+
+    public Integer obtenerIdPorCorreo(LinkedList<Cuenta> lista, String correo) throws Exception {
         LinkedList<Cuenta> lo = this.quickSort(0, "correo", lista);
         Cuenta[] c = lo.toArray();
         for (int i = 0; i < lo.getSize(); i++) {
@@ -166,7 +168,7 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
         return -1; // Devuelve -1 si no se encuentra ninguna cuenta con el correo ingresado
     }
 
-    public int obtenerIdPorClave(LinkedList<Cuenta> lista, String clave) throws Exception {
+    public Integer obtenerIdPorClave(LinkedList<Cuenta> lista, String clave) throws Exception {
         LinkedList<Cuenta> lo = this.quickSort(0, "clave", lista);
         Cuenta[] c = lo.toArray();
         for (int i = 0; i < lo.getSize(); i++) {
@@ -175,15 +177,14 @@ public class CuentaControllerListas extends DataAccesObject<Cuenta>{
             }
         }
         return -1; // Devuelve -1 si no se encuentra ninguna cuenta con la clave ingresada
-    } 
-    
-//    public static Integer obtenerIdPorCorreoYClave(LinkedList<Cuenta> cuentas, String correo, String clave) {
-//        for (Cuenta cuenta : cuentas) {
-//            if (cuenta.getCorreo().equals(correo) && cuenta.getClave().equals(clave)) {
-//                return cuenta.getId();
-//            }
-//        }
-//        return -1; // Devuelve -1 si no se encuentra ninguna cuenta con el correo y la clave ingresados
-//    }
-//  
+    }
+
+    public boolean esRolAdministrador(LinkedList<Cuenta> lista, int idPorCorreo, int idPorClave, RolControllerListas rl) throws Exception {
+        Integer rolPorCorreo = lista.get(idPorCorreo).getId_rol();
+        Integer rolPorClave = lista.get(idPorClave).getId_rol();
+        Integer rolAdministrador = rl.getRol().getId(); // Asegúrate de reemplazar getRolAdministrador() con el método correcto para obtener el rol de administrador
+
+        return rolPorCorreo.equals(rolPorClave) && rolPorCorreo.equals(rolAdministrador);
+    }
+
 }

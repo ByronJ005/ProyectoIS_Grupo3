@@ -9,11 +9,22 @@
                 "estado": true,
                 "id_rol": 1,
                 "id_persona": 4
+            },
+            "next": {
+                "data": {
+                    "@class": "modelo.Cuenta",
+                    "id": 2,
+                    "correo": "Apolodejota",
+                    "clave": "apolodejota",
+                    "estado": true,
+                    "id_rol": 1,
+                    "id_persona": 4
+                }
             }
         },
         "last": {
-            "@reference": "..\/head"
+            "@reference": "..\/head\/next"
         },
-        "size": 1
+        "size": 2
     }
 }
