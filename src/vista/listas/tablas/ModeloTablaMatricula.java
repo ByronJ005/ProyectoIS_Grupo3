@@ -1,7 +1,7 @@
 package vista.listas.tablas;
-import controlador.EstudianteControlador;
-import controlador.PeriodoController;
 import controlador.TDALista.LinkedList;
+import controladores.EstudianteControlador;
+import controladores.PeriodoController;
 import java.text.SimpleDateFormat;
 import javax.swing.table.AbstractTableModel;
 import modelo.Estudiante;

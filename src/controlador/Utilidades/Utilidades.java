@@ -1,11 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controlador.Utilidades;
-
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-//cambios en Docente y Estudiante
+//cambios en Docente y Estudiante, veamos si sube
 /**
  *
  * @author sakotaz

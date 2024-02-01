@@ -2,13 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador;
-
-
+package controladores;
 import controlador.TDALista.LinkedList;
 import controlador.TDALista.exceptions.VacioException;
 import controlador.listas.DAO.DataAccesObject;
-import java.lang.reflect.Field;
 import modelo.Estudiante;
 
 /**
@@ -188,16 +185,4 @@ public class EstudianteControlador extends DataAccesObject <Estudiante>{
         }
         return estudianteHallado;
     }
-
-    public static void main(String[] args) {
-        EstudianteControlador ec = new EstudianteControlador();
-        ec.getEstudiante().setId(1);
-        ec.getEstudiante().setNombres("Luis Chamba");
-        ec.guardar();
-        
-        ec.getEstudiante().setId(2);
-        ec.getEstudiante().setNombres("Alexis Ludeña");
-        ec.guardar();
-    }    
-    
 }

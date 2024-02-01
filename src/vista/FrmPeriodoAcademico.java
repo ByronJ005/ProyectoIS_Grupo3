@@ -1,6 +1,6 @@
 package vista;
 
-import controlador.PeriodoController;
+import controladores.PeriodoController;
 import controlador.TDALista.LinkedList;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
